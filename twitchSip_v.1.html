@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>FCC -TwitchSip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+	<style>
+		body
+		{
+		margin: 0;
+		padding: 0;
+		}
+		/* TwitchSip Styles */
+		header {
+		  background: linear-gradient(to right, #ccb3fb, #f0e8fe, #ccb3fb);
+		  text-align: center;
+		}
+		#sips {
+		  max-height: 7ex;
+		}
+		/* tab style */
+		.myTab {
+		  background: none;
+		  color: #270663;
+		}
+		.myTab:hover {
+		  background: #8f6dcf;
+		  color: white;
+		  font-weight: 700;
+		}
+		/* streamer display */
+		#mainDisp {
+		  margin: 1vh auto; 
+		  width: 92vw;
+		}
+		.channels {
+		  color: #270663;
+		  min-height: 35vh;
+		}
+		.result {
+		  min-height: 400px;
+		}
+		#logo { /* twitch streamer logo */
+		  width: 5em;
+		  border-radius: 50%;
+		}
+		#dispName {
+		  font-size: 1.75em;
+		  font-variant: small-caps;
+		  padding-top: 1vw;
+		  padding-left: 1vw;
+		}
+		#activeStat {
+		  height: 2vw;
+		  margin-right: 1vw;
+		  margin-bottom: 1vw;
+		}
+		.w3-purp-l5 {
+		  color: #270663 !important;
+		  background-color: #f0e8fe !important;
+		}
+		.w3-purp-l4 {
+		  color: #270663 !important;
+		  background-color: #ccb3fb !important;
+		}
+		.w3-purp-l2 {
+		  color: #fff !important;
+		  background-color: #8f6dcf !important;
+		}
+		.w3-purp-l1 {
+		  color: #fff !important;
+		  background-color: #450ab1 !important;
+		}
+		.w3-text-theme {
+		  color: #270663 !important;
+		}
+		.w3-hover-purp:hover {
+		  color: #fff !important;
+		  background-color: #8f6dcf !important;
+		}
+		.w3-hover-text-purp {
+		  color: #270663 !important;
+		}
+		/* I maked dis display */
+		.icon-bar {
+			position: fixed;
+			bottom: 5%;
+		}
+		.icon-bar a {
+			display: block;
+			text-align: center;
+			padding-left: 1vh;
+			padding-bottom: 0.5vh;
+			transition: all 0.3s ease;
+			color: #8f6dcf;
+			opacity: 0.25;
+			font-size: 100%;
+		}
+		.icon-bar a:hover {
+			color: #ccb3fb;
+			opacity: 1;
+		}
+	</style>
+</head> 
+<body>
+<!-- BEGIN HEADER -->
+<header class="w3-padding-16" id="header"><img src="http://i68.tinypic.com/154um4g.png" alt="TwitchSipLogo" id="sips"></header>
+<!-- END HEADER -->
+<div class="w3-container w3-padding w3-purp-l2" style="text-align: center; font-style: italic;">Take a sip from the stream.</div>
+<!-- DESCRIPTION AND SEARCH -->
+<div class="w3-container w3-section w3-purp-l5 w3-card-4 w3-padding w3-text-theme" style="width:70%; min-width: 10em; margin: auto; text-align: center">
+  <p>Input your <b>Twitch.tv</b> username to preview the activity of the channels you follow!</p>
+  <form class="pure-form"><input class="w3-threequarter w3-input w3-border" id="userName" type="text" placeholder="Type here..." style="width: 70%;" /><button class="w3-btn w3-purp-l2" type="submit" style="width:25%;"><i class="fa fa-chevron-circle-right" style="font-size:1.5em"></i></button></form>
+</div>
+<!--END DESCRIPTION AND SEARCH -->
+<!-- BEGIN MAIN DISPLAY -->
+<div class="w3-container" id="mainDisp">
+  <div class="w3-bar w3-purp-l4 w3-card-4"><button class="w3-bar-item w3-purp-l5 myTab tablink" onclick="openTab(event,'all')">All</button><button class="w3-bar-item myTab tablink" onclick="openTab(event,'online')">Online</button><button class="w3-bar-item myTab tablink" onclick="openTab(event,'offline')">Offline</button></div>
+  <div
+	id="all" class="w3-purp-l5 w3-container w3-card-4 tab">
+	<h2>All channels!</h2>
+</div>
+<div id="online" class="w3-purp-l5 w3-container w3-card-4 tab" style="display:none;">
+  <h2>Streaming channels!</h2>
+</div>
+<div id="offline" class="w3-purp-l5 w3-container w3-card-4 tab" style="display:none;">
+  <h2>Offline channels!</h2>
+</div>
+<!-- END MAIN DISPLAY -->
+</div>
+<!-- BEGIN I maked dis -->
+<div class="icon-bar">
+	<a href="https://en.wikipedia.org/wiki/Copyright_infringement" target="_blank" title="Danielle C. Monroe © 2018"><i class="far fa-copyright"></i></a>
+	<a href="https://www.freecodecamp.org/l0tu5" title="DC's FCC" target="_blank"><i class="fab fa-free-code-camp"></i></a>
+	<a href="https://codepen.io/L0TU5/" title="DC's CodePen" target="_blank"><i class="fab fa-codepen"></i></a>
+	<a href="https://github.com/L0TU5" title="DC's GitHub" target="_blank"><i class="fab fa-github-alt"></i></a>
+	<a href="www.linkedin.com/in/danielle-monroe" title="DC's LinkedIn" target="_blank"><i class ="fab fa-linkedin"></i></a>
+</div>
+<!--END I maked dis-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script> <!--Font Awesome icon src-->
+	<script>
+	var live; // streamer online status
+	var name; // streamer account name
+	var logo;// streamer logo
+	var status;// streamer text status
+	var preview; // streamer live stream preview
+function getAll() { // get and display JSON data results - all channels
+  $("#all").append(`${displayData()}`);
+}
+function getOnline() {
+  $("#online").append(`${displayData()}`); // get and display JSON data results - online channels
+}
+function getOffline() {
+  $("#offline").append(`${displayData()}`); // get and display JSON data results - offline channels
+}
+function displayData() { // JSON data displauy formatting 
+  return `<div class="w3-third result"><div class="w3-card-4 w3-margin" id="template"><div class="w3-row"><div class="w3-col w3-display-container w3-purp-l2" id="dispName">${live}<a href="https://www.twitch.tv/${name}" title="Go to ${name}'s channel" target="_blank">${name}</a></div></div><div class="w3-display-container"><img src="${preview}" alt="Preview" style="width:100%"><div class="w3-padding w3-display-topright"><img src="${logo}" alt="logo" id="logo" title="${name}'s logo!"></div></div><div class="w3-container w3-purp-l4 w3-center" style="padding-top:1vh, min-height:150px;"><p>${status}</p></div></div></div>`;
+}
+//BEGIN JQ
+$(document).ready(function() {
+  //BEGIN TWITCH.TV USERNAME SUBMISSION
+  var nameInput = document.getElementById("userName");
+  document
+	.querySelector("form.pure-form")
+	.addEventListener("submit", function(e) {
+	  e.preventDefault();
+	  console.log(nameInput.value);
+	  //FCC FOLLOWERS API CALL
+	  var followerURL =
+		"https://wind-bow.glitch.me/twitch-api/channels/" +
+		nameInput.value +
+		"/follows";
+	  var channels = [];
+	  $.getJSON(followerURL, function(data1) {
+		for (var a = 0; a < data1.follows.length; a++) {
+		  var displayName = data1.follows[a].user.display_name;
+		  channels.push(displayName);
+		}
+		//BEGIN Channel forEach
+		channels.forEach(function(channel) {
+		  var streamURL =
+			"https://wind-bow.glitch.me/twitch-api/streams/" + channel;
+		  //BEGIN Channel getJSON
+		  $.getJSON(streamURL, function(streamData) {
+			if (streamData.stream === null) {
+			  var chanURL =
+				"https://wind-bow.glitch.me/twitch-api/channels/" + channel;
+			  $.getJSON(chanURL, function(chanData) {
+				if (chanData.error) {
+				  //NULL CHANNEL DATA
+				  live = "";
+				  name = channel;
+				  logo = "http://i66.tinypic.com/2la67br.png";
+				  status = "Channel Not Found!";
+				  preview = "http://i65.tinypic.com/ih35e9.png";
+				  getAll();
+				  getOffline();
+				} else {
+				  //OFFLINE CHANNEL DATA
+				  live =
+					'<div class="w3-round-xxlarge w3-red w3-left" id="activeStat" style="width:2vw"></div>';
+				  name = chanData.display_name;
+				  logo = chanData.logo;
+				  if (chanData.status === null) {
+					status = "Not streaming, probably dreaming.";
+				  } else {
+					status = chanData.status;
+				  }
+				  if (!chanData.video_banner) {
+					preview = "http://i67.tinypic.com/29cl0go.png";
+				  } else preview = chanData.video_banner;
+				  getAll();
+				  getOffline();
+				}
+			  });
+			} else {
+			  // ONLINE CHANNEL DATA
+			  live =
+				'<div class="w3-round-xxlarge w3-green w3-left" id="activeStat" style="width:2vw"></div>';
+			  name = streamData.stream.channel.display_name;
+			  url = logo = streamData.stream.channel.logo;
+			  if (streamData.stream.channel.status === null) {
+				status = "";
+			  } else {
+				status = streamData.stream.channel.status;
+			  }
+			  preview = streamData.stream.preview.large;
+			  getAll();
+			  getOnline();
+			}
+		  }); //END Channel getJSON
+		}); //END Channel forEach
+	  }); //END FCC FOLLOWERS API CALL AND PUSH UPDATE
+	}); //END TWITCH.TV USERNAME SUBMISSION
+}); //END JQ
+
+//BEGIN TAB NAVIGATION
+function openTab(evt, tabName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("tab");
+  for (i = 0; i < x.length; i++) {
+	x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+	tablinks[i].className = tablinks[i].className.replace(" w3-purp-l5", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " w3-purp-l5";
+}
+//END TAB  NAVIGATION
+	</script>
+</body>
+
+</html>

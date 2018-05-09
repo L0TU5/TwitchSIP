@@ -1,0 +1,96 @@
+body
+{
+margin: 0;
+padding: 0;
+}
+/* TwitchSip Styles */
+header {
+  background: linear-gradient(to right, #ccb3fb, #f0e8fe, #ccb3fb);
+  text-align: center;
+}
+#sips {
+  max-height: 7ex;
+}
+/* tab style */
+.myTab {
+  background: none;
+  color: #270663;
+}
+.myTab:hover {
+  background: #8f6dcf;
+  color: white;
+  font-weight: 700;
+}
+/* streamer display */
+#mainDisp {
+  margin: 1vh auto; 
+  width: 92vw;
+}
+.channels {
+  color: #270663;
+  min-height: 20em;
+}
+.result {
+  min-height: 400px;
+}
+#logo { /* twitch streamer logo */
+  width: 5em;
+  border-radius: 50%;
+}
+#dispName {
+  font-size: 1.75em;
+  font-variant: small-caps;
+  padding-top: 1vw;
+  padding-left: 1vw;
+}
+#activeStat {
+  height: 2vw;
+  margin-right: 1vw;
+  margin-bottom: 1vw;
+}
+.w3-purp-l5 {
+  color: #270663 !important;
+  background-color: #f0e8fe !important;
+}
+.w3-purp-l4 {
+  color: #270663 !important;
+  background-color: #ccb3fb !important;
+}
+.w3-purp-l2 {
+  color: #fff !important;
+  background-color: #8f6dcf !important;
+}
+.w3-purp-l1 {
+  color: #fff !important;
+  background-color: #450ab1 !important;
+}
+.w3-text-theme {
+  color: #270663 !important;
+}
+.w3-hover-purp:hover {
+  color: #fff !important;
+  background-color: #8f6dcf !important;
+}
+.w3-hover-text-purp {
+  color: #270663 !important;
+}
+/* I maked dis display */
+.icon-bar {
+	position: fixed;
+	bottom: 5%;
+}
+.icon-bar a {
+	display: block;
+	text-align: center;
+	padding-left: 1vh;
+	padding-bottom: 0.5vh;
+	transition: all 0.3s ease;
+	color: #8f6dcf;
+	opacity: 0.25;
+	font-size: 150%;
+}
+
+.icon-bar a:hover {
+	color: #ccb3fb;
+	opacity: 1;
+}

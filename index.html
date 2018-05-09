@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>TwitchSip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+<!-- BEGIN HEADER -->
+<header class="w3-padding-16" id="header"><img src="http://i68.tinypic.com/154um4g.png" alt="TwitchSipLogo" id="sips"></header>
+<!-- END HEADER -->
+<div class="w3-container w3-padding w3-purp-l2" style="text-align: center; font-style: italic;">Take a sip from the stream.</div>
+<!-- DESCRIPTION AND SEARCH -->
+<div class="w3-container w3-section w3-purp-l5 w3-card-4 w3-padding w3-text-theme" style="width:70%; min-width: 10em; margin: auto; text-align: center">
+  <p>Input your <b>Twitch.tv</b> username to preview the activity of the channels you follow!</p>
+  <form class="pure-form"><input class="w3-threequarter w3-input w3-border" id="userName" type="text" placeholder="Type here..." style="width: 70%;" /><button class="w3-btn w3-purp-l2" type="submit" style="width:25%;"><i class="fa fa-chevron-circle-right" style="font-size:1.5em"></i></button></form>
+</div>
+<!--END DESCRIPTION AND SEARCH -->
+<!-- BEGIN MAIN DISPLAY -->
+<div class="w3-container" id="mainDisp">
+  <div class="w3-bar w3-purp-l4 w3-card-4"><button class="w3-bar-item w3-purp-l5 myTab tablink" onclick="openTab(event,'all')">All</button><button class="w3-bar-item myTab tablink" onclick="openTab(event,'online')">Online</button><button class="w3-bar-item myTab tablink" onclick="openTab(event,'offline')">Offline</button></div>
+  <div
+    id="all" class="w3-purp-l5 w3-container w3-card-4 tab">
+    <h2>All channels!</h2>
+</div>
+<div id="online" class="w3-purp-l5 w3-container w3-card-4 tab" style="display:none;">
+  <h2>Streaming channels!</h2>
+</div>
+<div id="offline" class="w3-purp-l5 w3-container w3-card-4 tab" style="display:none;">
+  <h2>Offline channels!</h2>
+</div>
+<!-- END MAIN DISPLAY -->
+</div>
+<!-- BEGIN I maked dis -->
+<div class="icon-bar">
+    <a href="https://codepen.io/L0TU5/full/YaoYeg/" target="_blank" title="Danielle C. Monroe © 2018"><i class="far fa-copyright"></i></a>
+    <a href="https://www.freecodecamp.org/l0tu5" title="DC's FCC" target="_blank"><i class="fab fa-free-code-camp"></i></a>
+    <a href="https://codepen.io/L0TU5/" title="DC's CodePen" target="_blank"><i class="fab fa-codepen"></i></a>
+    <a href="https://github.com/L0TU5" title="DC's GitHub" target="_blank"><i class="fab fa-github-alt"></i></a>
+    <a href="www.linkedin.com/in/danielle-monroe" title="DC's LinkedIn" target="_blank"><i class ="fab fa-linkedin"></i></a>
+</div>
+<!--END I maked dis-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
